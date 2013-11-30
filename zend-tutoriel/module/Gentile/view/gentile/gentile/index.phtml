@@ -1,0 +1,166 @@
+<?php
+ // module/Album/view/album/album/index.phtml:
+ $title = 'My gentileV';
+ $this->headTitle($title);
+ ?>
+ 
+ 
+ <h1><?php echo $this->escapeHtml($title); ?></h1>
+ <p>
+     <a href="<?php echo $this->url('gentile', array('action'=>'add'));?>">Add new gentile</a>
+ </p>
+ 
+ 
+  
+ <h1>Tableau:Joueur</h1>
+ <table class="table">
+ <tr>
+     <th>login</th>
+     <th>email</th>
+     <th>pays</th>
+ </tr>
+ <?php foreach ($gentileV as $joueur) : ?>
+ <tr>
+     <td><?php echo $this->escapeHtml($joueur->login);?></td>
+     <td><?php echo $this->escapeHtml($joueur->email);?></td>
+     <td><?php echo $this->escapeHtml($joueur->pays);?></td>
+     <td>
+         <a href="<?php echo $this->url('joueur',
+             array('action'=>'edit', 'id_joueur' => $gentile->id_joueur));?>">Edit</a>
+         <a href="<?php echo $this->url('gentile',
+             array('action'=>'delete', 'id_joueur' => $gentile->id_joueur));?>">Delete</a>
+     </td>
+ </tr>
+ <?php endforeach; ?>
+ </table>
+ 
+ 
+ <br>
+ <br>
+ 
+ 
+
+ <h1>Tableau:Gentile</h1>
+ <table class="table">
+ <tr>
+      <th>gentile</th>
+      <th>jour</th>
+      <th>zone</th>
+     <th>Nom_gentile</th>
+     <th>Auteur</th>
+     <th>&nbsp;</th>
+ </tr>
+ <?php foreach ($gentileV as $gentile) : ?>
+ <tr>
+     <td><?php echo $this->escapeHtml($gentile->id_gentile);?></td>
+     <td><?php echo $this->escapeHtml($gentile->id_joueur);?></td>
+     <td><?php echo $this->escapeHtml($gentile->id_zone);?></td>
+     <td><?php echo $this->escapeHtml($gentile->nom_gentile);?></td>
+     <td><?php echo $this->escapeHtml($gentile->auteur);?></td>
+     <td>
+         <a href="<?php echo $this->url('gentile',
+             array('action'=>'edit', 'id_gentile' => $gentile->id_gentile));?>">Edit</a>
+         <a href="<?php echo $this->url('gentile',
+             array('action'=>'delete', 'id_gentile' => $gentile->id_gentile));?>">Delete</a>
+     </td>
+ </tr>
+ <?php endforeach; ?>
+ </table>
+ 
+ <br>
+ <br>
+ 
+
+ 
+ 
+ <h1>Tableau:Score</h1>
+ <table class="table">
+ <tr>
+     <th>nombredepoint</th>
+ </tr>
+ <?php foreach ($gentileV as $score) : ?>
+ <tr>
+     <td><?php echo $this->escapeHtml($score->nombredepoint);?></td>
+
+     <td>
+         <a href="<?php echo $this->url('scorer',
+             array('action'=>'edit', 'id_score' => $gentile->id_score));?>">Edit</a>
+         <a href="<?php echo $this->url('gentile',
+             array('action'=>'delete', 'id_score' => $gentile->id_score));?>">Delete</a>
+     </td>
+ </tr>
+ <?php endforeach; ?>
+ </table>
+ 
+ 
+ 
+ 
+  
+ <h1>Tableau:Trophe</h1>
+ <table class="table">
+ <tr>
+     <th>joueur</th>
+     <th>date</th>
+     <th>type_trophe</th>
+ </tr>
+ <?php foreach ($gentileV as $trophe) : ?>
+ <tr>
+     <td><?php echo $this->escapeHtml($trophe->id_joueur);?></td>
+     <td><?php echo $this->escapeHtml($trophe->date);?></td>
+     <td><?php echo $this->escapeHtml($trophe->type_trophe);?></td>
+     <td>
+         <a href="<?php echo $this->url('trophe',
+             array('action'=>'edit', 'id_trophe' => $gentile->id_trophe));?>">Edit</a>
+         <a href="<?php echo $this->url('gentile',
+             array('action'=>'delete', 'id_trophe' => $gentile->id_trophe));?>">Delete</a>
+     </td>
+ </tr>
+ <?php endforeach; ?>
+ </table>
+ 
+ 
+  <br>
+ <br>
+ 
+  
+ <h1>Tableau:Zone</h1>
+ <table class="table">
+ <tr>
+     <th>id_zone</th>
+     <th>longitud</th>
+     <th>laltitude</th>
+     <th>zone_min</th>
+     <th>zone_max</th>
+     <th>adress</th>
+     <th>code_postal</th>
+     <th>ville</th>
+     <th>pays</th>
+     <th>date</th>
+     
+     
+ </tr>
+ <?php foreach ($gentileV as $zone) : ?>
+ <tr>
+     <td><?php echo $this->escapeHtml($zone->id_zone);?></td>
+     <td><?php echo $this->escapeHtml($zone->longitud);?></td>
+     <td><?php echo $this->escapeHtml($zone->laltitude);?></td>
+     <td><?php echo $this->escapeHtml($zone->zone_min);?></td>
+     <td><?php echo $this->escapeHtml($zone->zone_max);?></td>
+     <td><?php echo $this->escapeHtml($zone->adress);?></td>
+     <td><?php echo $this->escapeHtml($zone->code_postal);?></td>
+     <td><?php echo $this->escapeHtml($zone->ville);?></td>
+     <td><?php echo $this->escapeHtml($zone->pays);?></td>
+     <td><?php echo $this->escapeHtml($zone->date);?></td>
+     <td>
+         <a href="<?php echo $this->url('zone',
+             array('action'=>'edit', 'id_zone' => $gentile->id_zone));?>">Edit</a>
+         <a href="<?php echo $this->url('gentile',
+             array('action'=>'delete', 'id_zone' => $gentile->id_zone));?>">Delete</a>
+     </td>
+ </tr>
+ <?php endforeach; ?>
+ </table>
+ 
+ 
+  <br>
+ <br>
