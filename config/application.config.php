@@ -2,7 +2,7 @@
 return array(
     'modules' => array(
         'Application',
-        'Flux',                  // <-- Add this line
+                         // <-- Add this line
         'Gentile',
           
     ),

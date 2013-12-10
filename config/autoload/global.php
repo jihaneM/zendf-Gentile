@@ -15,8 +15,7 @@
 return array(
      'db' => array(
          'driver'         => 'Pdo',
-         'dsn'            => 'mysql:dbname=flux;host=localhost',
-     	 'dsn1'            => 'mysql:dbname=gentile;host=localhost',
+     	 'dsn'            => 'mysql:dbname=gentile;host=localhost',
          'driver_options' => array(
              PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''
          ),
